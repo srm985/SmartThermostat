@@ -1,0 +1,278 @@
+#platform "uLCD-32PTU"
+
+#inherit "4DGL_16bitColours.fnc"
+
+#inherit "VisualConst.inc"
+
+#inherit "SamrtThermoConst.inc"
+
+func main()
+
+    initLCD();
+    initGraphics();
+    //initRTC();
+
+    var timeData[7], touchStatus[4];
+
+    touch_Set(TOUCH_ENABLE);
+
+    repeat
+
+        checkTouch(touchStatus);
+
+        if (touchStatus[1] == i4Dbutton1 && touchStatus[0] == TOUCH_PRESSED)
+            img_SetWord(hndl, i4Dbutton1, IMAGE_INDEX, 1); // where state is 0 for up and 1 for down
+            img_Show(hndl,i4Dbutton1) ;
+        endif
+
+        if (touchStatus[1] == i4Dbutton1 && touchStatus[0] == TOUCH_RELEASED)
+            img_SetWord(hndl, i4Dbutton1, IMAGE_INDEX, 0); // where state is 0 for up and 1 for down
+            img_Show(hndl,i4Dbutton1) ;
+        endif
+
+        readRTC(timeData);
+        printTime(timeData);
+        //pause(500);
+
+        /*img_SetWord(hndl, 0, IMAGE_INDEX, 1); // when on is 0 for off or 1 for on
+        img_Show(hndl,0) ;
+        pause(500);
+        img_SetWord(hndl, 0, IMAGE_INDEX, 0); // when on is 0 for off or 1 for on
+        img_Show(hndl,0) ;
+        pause(500);*/
+
+    forever
+
+endfunc
+
+
+func initLCD()
+
+    //var hstrings ; // Handle to access uSD strings, uncomment if required
+    //var hFontx ;   // Handle to access uSD fonts, uncomment if required and change n to font number
+
+    //Uncomment the following if uSD images, fonts or strings used.
+    putstr("Mounting...\n");
+    if (!(disk:=file_Mount()))
+        while(!(disk :=file_Mount()))
+            putstr("Drive not mounted...");
+            pause(500);
+            gfx_Cls();
+            pause(500);
+        wend
+    endif
+    gfx_Cls();
+    gfx_TransparentColour(0x0020);    // uncomment if transparency required
+    gfx_Transparency(ON);             // uncomment if transparency required
+
+    hndl := file_LoadImageControl("SAMRTT~1.dat", "SAMRTT~1.gci", 1);
+
+    gfx_Set(SCREEN_MODE,LANDSCAPE) ;
+
+endfunc
+
+
+func initGraphics()
+
+    img_Show(hndl,iLed1) ;
+    img_SetWord(hndl, iLed1, IMAGE_INDEX, ON) ;
+
+    img_ClearAttributes(hndl, i4Dbutton1, I_TOUCH_DISABLE);
+    img_Show(hndl, i4Dbutton1);
+
+endfunc
+
+
+func checkTouch(var *touchStatus)
+
+    //touchStatus: State, N, X_Cord, Y_Cord
+
+    touchStatus[0] := touch_Get(TOUCH_STATUS);
+    touchStatus[1] := img_Touched(hndl, -1);
+
+    if(touchStatus[0] == TOUCH_PRESSED)
+        touchStatus[2] := touch_Get(TOUCH_GETX);
+        touchStatus[3] := touch_Get(TOUCH_GETY);
+
+
+    else if(touchStatus[0] == TOUCH_RELEASED)
+        //
+
+
+    else if(touchStatus[0] == TOUCH_MOVING)
+        touchStatus[2] := touch_Get(TOUCH_GETX);
+        touchStatus[3] := touch_Get(TOUCH_GETY);
+    endif
+
+endfunc
+
+
+func initRTC()
+
+    I2C_Open(I2C_SLOW);
+    I2C_Start();
+    I2C_Write(0xD0);
+    I2C_Ack();
+    I2C_Write(0x00);
+    I2C_Ack();
+    I2C_Write(0x00);    //Reset Seconds
+    I2C_Ack();
+    I2C_Write(0x00);    //Reset Minutes
+    I2C_Ack();
+    I2C_Write(0x12);    //Reset Hours
+    I2C_Ack();
+    I2C_Write(0x01);    //Reset Day of Week (Sunday)
+    I2C_Ack();
+    I2C_Write(0x15);    //Reset Date (15th)
+    I2C_Ack();
+    I2C_Write(0x06);    //Reset Month (June)
+    I2C_Ack();
+    I2C_Write(0x14);    //Reset Year (2014)
+    I2C_Ack();
+    I2C_Write(0x00);    //Zero Control Register
+    I2C_Ack();
+    I2C_Stop();
+    I2C_Close();
+
+endfunc
+
+
+func readRTC(var *timeData)
+
+    I2C_Open(I2C_SLOW);
+    I2C_Start();
+    I2C_Write(0xD0);
+    I2C_Ack();
+    I2C_Write(0x00);
+    I2C_Ack();
+    I2C_Restart();
+    I2C_Write(0xD1);
+    timeData[0] := I2C_Read() & 0x7F;   //Read Seconds
+    I2C_Ack();
+    timeData[1] := I2C_Read();          //Read Minutes
+    I2C_Ack();
+    timeData[2] := I2C_Read() & 0x3F;   //Read Hours (24-Hour Format)
+    I2C_Ack();
+    timeData[3] := I2C_Read();          //Read Day of Week (0x01 = Sunday)
+    I2C_Ack();
+    timeData[4] := I2C_Read();          //Read Date
+    I2C_Ack();
+    timeData[5] := I2C_Read();          //Read Month
+    I2C_Ack();
+    timeData[6] := I2C_Read();          //Read Year
+    I2C_Ack();
+    I2C_Read();
+    I2C_Nack();
+    I2C_Stop();
+    I2C_Close();
+
+endfunc
+
+
+func writeRTC(var *timeData)
+
+    I2C_Open(I2C_SLOW);
+    I2C_Start();
+    I2C_Write(0xD0);
+    I2C_Ack();
+    I2C_Write(0x00);
+    I2C_Ack();
+    I2C_Write(timeData[0]);     //Write Seconds
+    I2C_Ack();
+    I2C_Write(timeData[1]);     //Write Minutes
+    I2C_Ack();
+    I2C_Write(timeData[2]);     //Write Hours
+    I2C_Ack();
+    I2C_Write(timeData[3]);     //Write Day of Week (0x01 = Sunday)
+    I2C_Ack();
+    I2C_Write(timeData[4]);     //Write Date
+    I2C_Ack();
+    I2C_Write(timeData[5]);     //Write Month
+    I2C_Ack();
+    I2C_Write(timeData[6]);     //Write Year
+    I2C_Ack();
+    I2C_Write(0x00);            //Zero Control Register
+    I2C_Ack();
+    I2C_Stop();
+    I2C_Close();
+
+endfunc
+
+
+
+func printTime(var *timeData)
+
+    txt_MoveCursor(0, 0);
+    print("System Time:\n");
+    print((timeData[4]&0xF0)>>4, timeData[4]&0x0F, ".");
+    print((timeData[5]&0xF0)>>4, timeData[5]&0x0F, ".");
+    print((timeData[6]&0xF0)>>4, timeData[6]&0x0F, " ");
+
+    switch
+        case(timeData[3] == 1)
+            print("(Sunday) ");
+        break;
+        case(timeData[3] == 2)
+            print("(Monday) ");
+        break;
+        case(timeData[3] == 3)
+            print("(Tuesday) ");
+        break;
+        case(timeData[3] == 4)
+            print("(Wednesday) ");
+        break;
+        case(timeData[3] == 5)
+            print("(Thursday) ");
+        break;
+        case(timeData[3] == 6)
+            print("(Friday) ");
+        break;
+        case(timeData[3] == 7)
+            print("(Saturday) ");
+        break;
+    endswitch
+
+    print("\n");
+    print((timeData[2]&0xF0)>>4, timeData[2]&0x0F, ".");
+    print((timeData[1]&0xF0)>>4, timeData[1]&0x0F, ".");
+    print((timeData[0]&0xF0)>>4, timeData[0]&0x0F, "\n");
+
+endfunc
+
+
+func readDHT11(var *enviroData)
+
+    pause(1500);
+    pin_Set(OUTPUT, IO1_PIN);
+    pin_HI(IO1_PIN);
+    pause(1);
+    pin_LO(IO1_PIN);
+    pause(19);
+    pin_HI(IO1_PIN);
+    pin_Set(INPUT, IO1_PIN);
+    while(pin_Read(IO1_PIN))
+        //Wait to go low.
+    wend
+    while(pin_Read(IO1_PIN) == 0)
+        //Wait to go high.
+    wend
+    while(pin_Read(IO1_PIN))
+        //Wait for data Tx.
+    wend
+
+    for(var i := 0; i <= 39; i++)
+        while(pin_Read(IO1_PIN) == 0)
+            temp1 := sys_T();
+        wend
+        while(pin_Read(IO1_PIN))
+            temp2 := sys_T();
+        wend
+    next
+
+endfunc
+
+
+
+
+
+

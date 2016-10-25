@@ -1,0 +1,538 @@
+Archive member included because of file (symbol)
+
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+                              c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm164p.o (exit)
+c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+                              DHT.o (__do_clear_bss)
+
+Discarded input sections
+
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm164p.o
+ .text          0x00000000        0x0 Conversions.o
+ .bss           0x00000000        0x0 Conversions.o
+ .text.BCD2Hex_Byte
+                0x00000000       0x16 Conversions.o
+ .text.Hex2BCD_Byte
+                0x00000000       0x28 Conversions.o
+ .text          0x00000000        0x0 DHT.o
+ .bss           0x00000000        0x0 DHT.o
+ .text          0x00000000        0x0 I2C.o
+ .bss           0x00000000        0x0 I2C.o
+ .text.I2C_Start_Wait
+                0x00000000       0x58 I2C.o
+ .text.I2C_Rep_Start
+                0x00000000        0x6 I2C.o
+ .text          0x00000000        0x0 LCD_Disp.o
+ .bss           0x00000000        0x0 LCD_Disp.o
+ .text.LCD_Clear
+                0x00000000        0xa LCD_Disp.o
+ .text.LCD_Home
+                0x00000000       0x12 LCD_Disp.o
+ .text.LCD_On   0x00000000       0x1c LCD_Disp.o
+ .text          0x00000000        0x0 RTC.o
+ .bss           0x00000000        0x0 RTC.o
+ .text.initRTC  0x00000000        0x2 RTC.o
+ .text.writeRTC
+                0x00000000        0x2 RTC.o
+ .text          0x00000000        0x0 SmartThermo.o
+ .bss           0x00000000        0x0 SmartThermo.o
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .text          0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .bss           0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.mul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x00000000        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00020000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+user_signatures  0x00850000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm164p.o
+LOAD Conversions.o
+LOAD DHT.o
+LOAD I2C.o
+LOAD LCD_Disp.o
+LOAD RTC.o
+LOAD SmartThermo.o
+START GROUP
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libm.a
+END GROUP
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5\libc.a
+LOAD c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000      0x41e
+ *(.vectors)
+ .vectors       0x00000000       0x7c c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm164p.o
+                0x00000000                __vector_default
+                0x00000000                __vectors
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x0000007c                . = ALIGN (0x2)
+                0x0000007c                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x0000007c        0x0 linker stubs
+ *(.trampolines*)
+                0x0000007c                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x0000007c                __ctors_start = .
+ *(.ctors)
+                0x0000007c                __ctors_end = .
+                0x0000007c                __dtors_start = .
+ *(.dtors)
+                0x0000007c                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x0000007c        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm164p.o
+                0x0000007c                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x0000007c        0xc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm164p.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000088       0x10 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+                0x00000088                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000098        0x8 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm164p.o
+ *(.init9)
+ *(.text)
+ .text          0x000000a0        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm164p.o
+                0x000000a0                __vector_22
+                0x000000a0                __vector_28
+                0x000000a0                __vector_24
+                0x000000a0                __vector_12
+                0x000000a0                __bad_interrupt
+                0x000000a0                __vector_6
+                0x000000a0                __vector_3
+                0x000000a0                __vector_23
+                0x000000a0                __vector_30
+                0x000000a0                __vector_25
+                0x000000a0                __vector_11
+                0x000000a0                __vector_13
+                0x000000a0                __vector_17
+                0x000000a0                __vector_19
+                0x000000a0                __vector_7
+                0x000000a0                __vector_27
+                0x000000a0                __vector_5
+                0x000000a0                __vector_4
+                0x000000a0                __vector_9
+                0x000000a0                __vector_2
+                0x000000a0                __vector_21
+                0x000000a0                __vector_15
+                0x000000a0                __vector_29
+                0x000000a0                __vector_8
+                0x000000a0                __vector_26
+                0x000000a0                __vector_14
+                0x000000a0                __vector_10
+                0x000000a0                __vector_16
+                0x000000a0                __vector_18
+                0x000000a0                __vector_20
+                0x000000a4                . = ALIGN (0x2)
+ *(.text.*)
+ .text.__vector_1
+                0x000000a4       0x38 DHT.o
+                0x000000a4                __vector_1
+ .text.initDHT  0x000000dc       0x18 DHT.o
+                0x000000dc                initDHT
+ .text.pollDHT  0x000000f4       0x70 DHT.o
+                0x000000f4                pollDHT
+ .text.I2C_init
+                0x00000164        0xc I2C.o
+                0x00000164                I2C_init
+ .text.I2C_Start
+                0x00000170       0x54 I2C.o
+                0x00000170                I2C_Start
+ .text.I2C_Stop
+                0x000001c4       0x12 I2C.o
+                0x000001c4                I2C_Stop
+ .text.I2C_Write
+                0x000001d6       0x24 I2C.o
+                0x000001d6                I2C_Write
+ .text.I2C_ReadAck
+                0x000001fa       0x16 I2C.o
+                0x000001fa                I2C_ReadAck
+ .text.I2C_ReadNak
+                0x00000210       0x16 I2C.o
+                0x00000210                I2C_ReadNak
+ .text.togle_EN
+                0x00000226       0x28 LCD_Disp.o
+                0x00000226                togle_EN
+ .text.LCD_Write
+                0x0000024e       0x4c LCD_Disp.o
+                0x0000024e                LCD_Write
+ .text.LCD_init
+                0x0000029a       0x5e LCD_Disp.o
+                0x0000029a                LCD_init
+ .text.LCD_Shift
+                0x000002f8       0x2e LCD_Disp.o
+                0x000002f8                LCD_Shift
+ .text.readRTC  0x00000326       0x4e RTC.o
+                0x00000326                readRTC
+ .text.main     0x00000374       0xa6 SmartThermo.o
+                0x00000374                main
+                0x0000041a                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000041a        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+                0x0000041a                _exit
+                0x0000041a                exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000041a        0x4 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ *(.fini0)
+                0x0000041e                _etext = .
+
+.data           0x00800100        0x0 load address 0x0000041e
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm164p.o
+ .data          0x00800100        0x0 Conversions.o
+ .data          0x00800100        0x0 DHT.o
+ .data          0x00800100        0x0 I2C.o
+ .data          0x00800100        0x0 LCD_Disp.o
+ .data          0x00800100        0x0 RTC.o
+ .data          0x00800100        0x0 SmartThermo.o
+ .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_exit.o)
+ .data          0x00800100        0x0 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/avr5\libgcc.a(_clear_bss.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x00800100                . = ALIGN (0x2)
+                0x00800100                _edata = .
+                0x00800100                PROVIDE (__data_end, .)
+
+.bss            0x00800100        0x2
+                0x00800100                PROVIDE (__bss_start, .)
+ *(.bss)
+ *(.bss*)
+ .bss.tempData  0x00800100        0x1 DHT.o
+                0x00800100                tempData
+ .bss.tempCount
+                0x00800101        0x1 DHT.o
+                0x00800101                tempCount
+ *(COMMON)
+                0x00800102                PROVIDE (__bss_end, .)
+                0x0000041e                __data_load_start = LOADADDR (.data)
+                0x0000041e                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x00800102        0x0
+                0x00800102                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x00800102                PROVIDE (__noinit_end, .)
+                0x00800102                _end = .
+                0x00800102                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab           0x00000000      0x6cc
+ *(.stab)
+ .stab          0x00000000      0x6cc c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm164p.o
+
+.stabstr        0x00000000       0x97
+ *(.stabstr)
+ .stabstr       0x00000000       0x97 c:/program files (x86)/atmel/atmel toolchain/avr8 gcc/native/3.4.2.1002/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.7.2/../../../../avr/lib/avr5/crtm164p.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000       0x2f
+ *(.comment)
+ .comment       0x00000000       0x2f Conversions.o
+                                 0x30 (size before relaxing)
+ .comment       0x00000000       0x30 DHT.o
+ .comment       0x00000000       0x30 I2C.o
+ .comment       0x00000000       0x30 LCD_Disp.o
+ .comment       0x00000000       0x30 RTC.o
+ .comment       0x00000000       0x30 SmartThermo.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x150
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x28 Conversions.o
+ .debug_aranges
+                0x00000028       0x30 DHT.o
+ .debug_aranges
+                0x00000058       0x58 I2C.o
+ .debug_aranges
+                0x000000b0       0x50 LCD_Disp.o
+ .debug_aranges
+                0x00000100       0x30 RTC.o
+ .debug_aranges
+                0x00000130       0x20 SmartThermo.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x00000000     0x109e
+ *(.debug_info)
+ .debug_info    0x00000000       0xd8 Conversions.o
+ .debug_info    0x000000d8      0x306 DHT.o
+ .debug_info    0x000003de      0x1c3 I2C.o
+ .debug_info    0x000005a1      0x6c5 LCD_Disp.o
+ .debug_info    0x00000c66      0x1a4 RTC.o
+ .debug_info    0x00000e0a      0x294 SmartThermo.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x6aa
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000       0x80 Conversions.o
+ .debug_abbrev  0x00000080      0x192 DHT.o
+ .debug_abbrev  0x00000212       0xd8 I2C.o
+ .debug_abbrev  0x000002ea      0x198 LCD_Disp.o
+ .debug_abbrev  0x00000482      0x11b RTC.o
+ .debug_abbrev  0x0000059d      0x10d SmartThermo.o
+
+.debug_line     0x00000000      0x802
+ *(.debug_line)
+ .debug_line    0x00000000       0x53 Conversions.o
+ .debug_line    0x00000053      0x1f2 DHT.o
+ .debug_line    0x00000245      0x1cc I2C.o
+ .debug_line    0x00000411      0x24d LCD_Disp.o
+ .debug_line    0x0000065e       0x71 RTC.o
+ .debug_line    0x000006cf      0x133 SmartThermo.o
+
+.debug_frame    0x00000000      0x268
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x34 Conversions.o
+ .debug_frame   0x00000034       0x54 DHT.o
+ .debug_frame   0x00000088       0xa0 I2C.o
+ .debug_frame   0x00000128       0xb4 LCD_Disp.o
+ .debug_frame   0x000001dc       0x58 RTC.o
+ .debug_frame   0x00000234       0x34 SmartThermo.o
+
+.debug_str      0x00000000      0x2a0
+ *(.debug_str)
+ .debug_str     0x00000000       0xbd Conversions.o
+                                 0xf1 (size before relaxing)
+ .debug_str     0x000000bd       0xc1 DHT.o
+                                0x180 (size before relaxing)
+ .debug_str     0x0000017e       0x73 I2C.o
+                                0x13f (size before relaxing)
+ .debug_str     0x000001f1       0x61 LCD_Disp.o
+                                0x1c7 (size before relaxing)
+ .debug_str     0x00000252       0x2d RTC.o
+                                0x121 (size before relaxing)
+ .debug_str     0x0000027f       0x21 SmartThermo.o
+                                0x13b (size before relaxing)
+
+.debug_loc      0x00000000      0x637
+ *(.debug_loc)
+ .debug_loc     0x00000000       0xb1 Conversions.o
+ .debug_loc     0x000000b1       0xa3 DHT.o
+ .debug_loc     0x00000154      0x148 I2C.o
+ .debug_loc     0x0000029c      0x2c1 LCD_Disp.o
+ .debug_loc     0x0000055d       0x93 RTC.o
+ .debug_loc     0x000005f0       0x47 SmartThermo.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x00000000      0x138
+ *(.debug_ranges)
+ .debug_ranges  0x00000000       0x18 Conversions.o
+ .debug_ranges  0x00000018       0x20 DHT.o
+ .debug_ranges  0x00000038       0x48 I2C.o
+ .debug_ranges  0x00000080       0x88 LCD_Disp.o
+ .debug_ranges  0x00000108       0x20 RTC.o
+ .debug_ranges  0x00000128       0x10 SmartThermo.o
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(SmartThermo.elf elf32-avr)
+LOAD linker stubs

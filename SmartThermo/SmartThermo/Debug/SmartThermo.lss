@@ -1,0 +1,824 @@
+
+SmartThermo.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  0000041e  000004b2  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         0000041e  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000002  00800100  00800100  000004b2  2**0
+                  ALLOC
+  3 .stab         000006cc  00000000  00000000  000004b4  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00000097  00000000  00000000  00000b80  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .comment      0000002f  00000000  00000000  00000c17  2**0
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000150  00000000  00000000  00000c46  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   0000109e  00000000  00000000  00000d96  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 000006aa  00000000  00000000  00001e34  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   00000802  00000000  00000000  000024de  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  00000268  00000000  00000000  00002ce0  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    000002a0  00000000  00000000  00002f48  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00000637  00000000  00000000  000031e8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 00000138  00000000  00000000  0000381f  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+
+unsigned char Hex2BCD_Byte(unsigned char Hex)
+{
+	unsigned char data = 0;
+	
+	data += (Hex / 10) << 4;
+   0:	0c 94 3e 00 	jmp	0x7c	; 0x7c <__ctors_end>
+   4:	0c 94 52 00 	jmp	0xa4	; 0xa4 <__vector_1>
+   8:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+   c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+	data += Hex - ((Hex / 10) * 10);
+  10:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  14:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  18:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  1c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  20:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+	
+	return data;
+}
+  24:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  28:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  2c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  30:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  34:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  38:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  3c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  40:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  44:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  48:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  4c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  50:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  54:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  58:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  5c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  60:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  64:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  68:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  6c:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  70:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  74:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+  78:	0c 94 50 00 	jmp	0xa0	; 0xa0 <__bad_interrupt>
+
+0000007c <__ctors_end>:
+  7c:	11 24       	eor	r1, r1
+  7e:	1f be       	out	0x3f, r1	; 63
+  80:	cf ef       	ldi	r28, 0xFF	; 255
+  82:	d4 e0       	ldi	r29, 0x04	; 4
+  84:	de bf       	out	0x3e, r29	; 62
+  86:	cd bf       	out	0x3d, r28	; 61
+
+00000088 <__do_clear_bss>:
+  88:	21 e0       	ldi	r18, 0x01	; 1
+  8a:	a0 e0       	ldi	r26, 0x00	; 0
+  8c:	b1 e0       	ldi	r27, 0x01	; 1
+  8e:	01 c0       	rjmp	.+2      	; 0x92 <.do_clear_bss_start>
+
+00000090 <.do_clear_bss_loop>:
+  90:	1d 92       	st	X+, r1
+
+00000092 <.do_clear_bss_start>:
+  92:	a2 30       	cpi	r26, 0x02	; 2
+  94:	b2 07       	cpc	r27, r18
+  96:	e1 f7       	brne	.-8      	; 0x90 <.do_clear_bss_loop>
+  98:	0e 94 ba 01 	call	0x374	; 0x374 <main>
+  9c:	0c 94 0d 02 	jmp	0x41a	; 0x41a <_exit>
+
+000000a0 <__bad_interrupt>:
+  a0:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a4 <__vector_1>:
+#include "LCD_Disp.h"
+
+volatile unsigned char tempCount = 0, tempData = 0;
+
+ISR(INT0_vect)
+{
+  a4:	1f 92       	push	r1
+  a6:	0f 92       	push	r0
+  a8:	0f b6       	in	r0, 0x3f	; 63
+  aa:	0f 92       	push	r0
+  ac:	11 24       	eor	r1, r1
+  ae:	8f 93       	push	r24
+	cli();
+  b0:	f8 94       	cli
+	tempData = 0;
+  b2:	10 92 00 01 	sts	0x0100, r1
+	if(TCNT0 > 100)
+  b6:	86 b5       	in	r24, 0x26	; 38
+  b8:	85 36       	cpi	r24, 0x65	; 101
+  ba:	18 f0       	brcs	.+6      	; 0xc2 <__vector_1+0x1e>
+	{
+		tempData = 1;
+  bc:	81 e0       	ldi	r24, 0x01	; 1
+  be:	80 93 00 01 	sts	0x0100, r24
+	}
+	TCNT0 = 0;
+  c2:	16 bc       	out	0x26, r1	; 38
+	tempCount --;
+  c4:	80 91 01 01 	lds	r24, 0x0101
+  c8:	81 50       	subi	r24, 0x01	; 1
+  ca:	80 93 01 01 	sts	0x0101, r24
+	sei();
+  ce:	78 94       	sei
+}
+  d0:	8f 91       	pop	r24
+  d2:	0f 90       	pop	r0
+  d4:	0f be       	out	0x3f, r0	; 63
+  d6:	0f 90       	pop	r0
+  d8:	1f 90       	pop	r1
+  da:	18 95       	reti
+
+000000dc <initDHT>:
+
+void initDHT(void)
+{
+	EICRA |= 0x02;
+  dc:	e9 e6       	ldi	r30, 0x69	; 105
+  de:	f0 e0       	ldi	r31, 0x00	; 0
+  e0:	80 81       	ld	r24, Z
+  e2:	82 60       	ori	r24, 0x02	; 2
+  e4:	80 83       	st	Z, r24
+	EIMSK |= 0x01;
+  e6:	e8 9a       	sbi	0x1d, 0	; 29
+	EIFR &= 0x00;
+  e8:	8c b3       	in	r24, 0x1c	; 28
+  ea:	1c ba       	out	0x1c, r1	; 28
+	
+	TCCR0A |= (1 << CS00);	//No Prescaler, 1usec Resolution
+  ec:	84 b5       	in	r24, 0x24	; 36
+  ee:	81 60       	ori	r24, 0x01	; 1
+  f0:	84 bd       	out	0x24, r24	; 36
+  f2:	08 95       	ret
+
+000000f4 <pollDHT>:
+}
+
+void pollDHT(unsigned char *climateData)
+{
+  f4:	ec 01       	movw	r28, r24
+	climateData[0] = 0;
+  f6:	18 82       	st	Y, r1
+	
+	//***************Poll DHT***************
+	DDRD |= 0x04;
+  f8:	52 9a       	sbi	0x0a, 2	; 10
+	PORTD &= 0xFB;
+  fa:	5a 98       	cbi	0x0b, 2	; 11
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+  fc:	88 e8       	ldi	r24, 0x88	; 136
+  fe:	93 e1       	ldi	r25, 0x13	; 19
+ 100:	01 97       	sbiw	r24, 0x01	; 1
+ 102:	f1 f7       	brne	.-4      	; 0x100 <pollDHT+0xc>
+	_delay_ms(20);
+	PORTD |= 0x04;
+ 104:	5a 9a       	sbi	0x0b, 2	; 11
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+ 106:	8c e0       	ldi	r24, 0x0C	; 12
+ 108:	8a 95       	dec	r24
+ 10a:	f1 f7       	brne	.-4      	; 0x108 <pollDHT+0x14>
+	_delay_us(38);		//40usec minus register changes
+	DDRD &= 0xFB;
+ 10c:	52 98       	cbi	0x0a, 2	; 10
+	PORTD |= 0x04;
+ 10e:	5a 9a       	sbi	0x0b, 2	; 11
+ 110:	82 e3       	ldi	r24, 0x32	; 50
+ 112:	8a 95       	dec	r24
+ 114:	f1 f7       	brne	.-4      	; 0x112 <pollDHT+0x1e>
+	//**************************************
+	
+	_delay_us(150);
+	TCNT0 = 0;
+ 116:	16 bc       	out	0x26, r1	; 38
+	tempCount = 8;
+ 118:	88 e0       	ldi	r24, 0x08	; 8
+ 11a:	80 93 01 01 	sts	0x0101, r24
+	tempData = 0;
+ 11e:	10 92 00 01 	sts	0x0100, r1
+	
+	sei();
+ 122:	78 94       	sei
+	while(tempCount >= 0)
+ 124:	80 91 01 01 	lds	r24, 0x0101
+	{
+		LCD_Shift(Cur_Shift, Right_Cur, 12);
+ 128:	4c e0       	ldi	r20, 0x0C	; 12
+ 12a:	64 e0       	ldi	r22, 0x04	; 4
+ 12c:	80 e0       	ldi	r24, 0x00	; 0
+ 12e:	0e 94 7c 01 	call	0x2f8	; 0x2f8 <LCD_Shift>
+		climateData[0] |= tempData << tempCount; 
+ 132:	80 91 00 01 	lds	r24, 0x0100
+ 136:	20 91 01 01 	lds	r18, 0x0101
+ 13a:	90 e0       	ldi	r25, 0x00	; 0
+ 13c:	02 c0       	rjmp	.+4      	; 0x142 <pollDHT+0x4e>
+ 13e:	88 0f       	add	r24, r24
+ 140:	99 1f       	adc	r25, r25
+ 142:	2a 95       	dec	r18
+ 144:	e2 f7       	brpl	.-8      	; 0x13e <pollDHT+0x4a>
+ 146:	98 81       	ld	r25, Y
+ 148:	89 2b       	or	r24, r25
+ 14a:	88 83       	st	Y, r24
+		LCD_Write(tempCount + '0', RS);
+ 14c:	80 91 01 01 	lds	r24, 0x0101
+ 150:	61 e0       	ldi	r22, 0x01	; 1
+ 152:	80 5d       	subi	r24, 0xD0	; 208
+ 154:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+		LCD_Shift(Cur_Shift, Left_Cur, 13);
+ 158:	4d e0       	ldi	r20, 0x0D	; 13
+ 15a:	60 e0       	ldi	r22, 0x00	; 0
+ 15c:	80 e0       	ldi	r24, 0x00	; 0
+ 15e:	0e 94 7c 01 	call	0x2f8	; 0x2f8 <LCD_Shift>
+ 162:	e0 cf       	rjmp	.-64     	; 0x124 <pollDHT+0x30>
+
+00000164 <I2C_init>:
+*************************************************************************/
+void I2C_init(void)
+{
+  /* initialize TWI clock: 100 kHz clock, TWPS = 0 => prescaler = 1 */
+  
+  TWSR = 0;                         /* no prescaler */
+ 164:	10 92 b9 00 	sts	0x00B9, r1
+  TWBR = ((1000000/SCL_CLOCK)-16)/2;  /* must be > 10 for stable operation */
+ 168:	8a e2       	ldi	r24, 0x2A	; 42
+ 16a:	80 93 b8 00 	sts	0x00B8, r24
+ 16e:	08 95       	ret
+
+00000170 <I2C_Start>:
+unsigned char I2C_Start(unsigned char address)
+{
+    uint8_t   twst;
+
+	// send START condition
+	TWCR = (1<<TWINT) | (1<<TWSTA) | (1<<TWEN);
+ 170:	94 ea       	ldi	r25, 0xA4	; 164
+ 172:	90 93 bc 00 	sts	0x00BC, r25
+	//TWCR = 0b10100100;
+	PORTC |= 0x03;	//Set internal pull-up resistors
+ 176:	98 b1       	in	r25, 0x08	; 8
+ 178:	93 60       	ori	r25, 0x03	; 3
+ 17a:	98 b9       	out	0x08, r25	; 8
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+ 17c:	ec eb       	ldi	r30, 0xBC	; 188
+ 17e:	f0 e0       	ldi	r31, 0x00	; 0
+ 180:	90 81       	ld	r25, Z
+ 182:	99 23       	and	r25, r25
+ 184:	ec f7       	brge	.-6      	; 0x180 <I2C_Start+0x10>
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+ 186:	90 91 b9 00 	lds	r25, 0x00B9
+ 18a:	98 7f       	andi	r25, 0xF8	; 248
+	if ( (twst != TW_START) && (twst != TW_REP_START)) return 1;
+ 18c:	98 30       	cpi	r25, 0x08	; 8
+ 18e:	11 f0       	breq	.+4      	; 0x194 <I2C_Start+0x24>
+ 190:	90 31       	cpi	r25, 0x10	; 16
+ 192:	a1 f4       	brne	.+40     	; 0x1bc <I2C_Start+0x4c>
+
+	// send device address
+	TWDR = address;
+ 194:	80 93 bb 00 	sts	0x00BB, r24
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 198:	84 e8       	ldi	r24, 0x84	; 132
+ 19a:	80 93 bc 00 	sts	0x00BC, r24
+
+	// wail until transmission completed and ACK/NACK has been received
+	while(!(TWCR & (1<<TWINT)));
+ 19e:	ec eb       	ldi	r30, 0xBC	; 188
+ 1a0:	f0 e0       	ldi	r31, 0x00	; 0
+ 1a2:	80 81       	ld	r24, Z
+ 1a4:	88 23       	and	r24, r24
+ 1a6:	ec f7       	brge	.-6      	; 0x1a2 <I2C_Start+0x32>
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+ 1a8:	90 91 b9 00 	lds	r25, 0x00B9
+ 1ac:	98 7f       	andi	r25, 0xF8	; 248
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+ 1ae:	98 31       	cpi	r25, 0x18	; 24
+ 1b0:	39 f0       	breq	.+14     	; 0x1c0 <I2C_Start+0x50>
+ 1b2:	81 e0       	ldi	r24, 0x01	; 1
+ 1b4:	90 34       	cpi	r25, 0x40	; 64
+ 1b6:	29 f4       	brne	.+10     	; 0x1c2 <I2C_Start+0x52>
+ 1b8:	80 e0       	ldi	r24, 0x00	; 0
+ 1ba:	08 95       	ret
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+	if ( (twst != TW_START) && (twst != TW_REP_START)) return 1;
+ 1bc:	81 e0       	ldi	r24, 0x01	; 1
+ 1be:	08 95       	ret
+
+	// check value of TWI Status Register. Mask prescaler bits.
+	twst = TW_STATUS & 0xF8;
+	if ( (twst != TW_MT_SLA_ACK) && (twst != TW_MR_SLA_ACK) ) return 1;
+
+	return 0;
+ 1c0:	80 e0       	ldi	r24, 0x00	; 0
+
+}/* I2C_Start */
+ 1c2:	08 95       	ret
+
+000001c4 <I2C_Stop>:
+ Terminates the data transfer and releases the I2C bus
+*************************************************************************/
+void I2C_Stop(void)
+{
+    /* send stop condition */
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWSTO);
+ 1c4:	84 e9       	ldi	r24, 0x94	; 148
+ 1c6:	80 93 bc 00 	sts	0x00BC, r24
+	
+	// wait until stop condition is executed and bus released
+	while(TWCR & (1<<TWSTO));
+ 1ca:	ec eb       	ldi	r30, 0xBC	; 188
+ 1cc:	f0 e0       	ldi	r31, 0x00	; 0
+ 1ce:	80 81       	ld	r24, Z
+ 1d0:	84 fd       	sbrc	r24, 4
+ 1d2:	fd cf       	rjmp	.-6      	; 0x1ce <I2C_Stop+0xa>
+
+}/* I2C_Stop */
+ 1d4:	08 95       	ret
+
+000001d6 <I2C_Write>:
+*************************************************************************/
+unsigned char I2C_Write(unsigned char data)
+{	
+    uint8_t   twst;
+	// send data to the previously addressed device
+	TWDR = data;
+ 1d6:	80 93 bb 00 	sts	0x00BB, r24
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 1da:	84 e8       	ldi	r24, 0x84	; 132
+ 1dc:	80 93 bc 00 	sts	0x00BC, r24
+
+	// wait until transmission completed
+	while(!(TWCR & (1<<TWINT)));
+ 1e0:	ec eb       	ldi	r30, 0xBC	; 188
+ 1e2:	f0 e0       	ldi	r31, 0x00	; 0
+ 1e4:	80 81       	ld	r24, Z
+ 1e6:	88 23       	and	r24, r24
+ 1e8:	ec f7       	brge	.-6      	; 0x1e4 <I2C_Write+0xe>
+
+	// check value of TWI Status Register. Mask prescaler bits
+	twst = TW_STATUS & 0xF8;
+ 1ea:	90 91 b9 00 	lds	r25, 0x00B9
+ 1ee:	98 7f       	andi	r25, 0xF8	; 248
+	if( twst != TW_MT_DATA_ACK) return 1;
+ 1f0:	81 e0       	ldi	r24, 0x01	; 1
+ 1f2:	98 32       	cpi	r25, 0x28	; 40
+ 1f4:	09 f4       	brne	.+2      	; 0x1f8 <I2C_Write+0x22>
+ 1f6:	80 e0       	ldi	r24, 0x00	; 0
+	return 0;
+
+}/* I2C_Write */
+ 1f8:	08 95       	ret
+
+000001fa <I2C_ReadAck>:
+ 
+ Return:  byte read from I2C device
+*************************************************************************/
+unsigned char I2C_ReadAck(void)
+{
+	TWCR = (1<<TWINT) | (1<<TWEN) | (1<<TWEA);
+ 1fa:	84 ec       	ldi	r24, 0xC4	; 196
+ 1fc:	80 93 bc 00 	sts	0x00BC, r24
+	while(!(TWCR & (1<<TWINT)));    
+ 200:	ec eb       	ldi	r30, 0xBC	; 188
+ 202:	f0 e0       	ldi	r31, 0x00	; 0
+ 204:	80 81       	ld	r24, Z
+ 206:	88 23       	and	r24, r24
+ 208:	ec f7       	brge	.-6      	; 0x204 <I2C_ReadAck+0xa>
+
+    return TWDR;
+ 20a:	80 91 bb 00 	lds	r24, 0x00BB
+
+}/* I2C_ReadAck */
+ 20e:	08 95       	ret
+
+00000210 <I2C_ReadNak>:
+ 
+ Return:  byte read from I2C device
+*************************************************************************/
+unsigned char I2C_ReadNak(void)
+{
+	TWCR = (1<<TWINT) | (1<<TWEN);
+ 210:	84 e8       	ldi	r24, 0x84	; 132
+ 212:	80 93 bc 00 	sts	0x00BC, r24
+	while(!(TWCR & (1<<TWINT)));
+ 216:	ec eb       	ldi	r30, 0xBC	; 188
+ 218:	f0 e0       	ldi	r31, 0x00	; 0
+ 21a:	80 81       	ld	r24, Z
+ 21c:	88 23       	and	r24, r24
+ 21e:	ec f7       	brge	.-6      	; 0x21a <I2C_ReadNak+0xa>
+	
+    return TWDR;
+ 220:	80 91 bb 00 	lds	r24, 0x00BB
+
+}/* I2C_ReadNak */
+ 224:	08 95       	ret
+
+00000226 <togle_EN>:
+	
+	I2C_Stop();
+}
+
+void togle_EN(uint8_t data, uint8_t RS_En)
+{
+ 226:	cf 93       	push	r28
+	I2C_Write(data | Backlight | En | RS_En);
+ 228:	c6 2f       	mov	r28, r22
+ 22a:	c8 2b       	or	r28, r24
+ 22c:	8c 2f       	mov	r24, r28
+ 22e:	8c 60       	ori	r24, 0x0C	; 12
+ 230:	0e 94 eb 00 	call	0x1d6	; 0x1d6 <I2C_Write>
+ 234:	81 e0       	ldi	r24, 0x01	; 1
+ 236:	8a 95       	dec	r24
+ 238:	f1 f7       	brne	.-4      	; 0x236 <togle_EN+0x10>
+	_delay_us(1);
+	I2C_Write((data | Backlight | RS_En) & ~En);
+ 23a:	8c 2f       	mov	r24, r28
+ 23c:	83 7f       	andi	r24, 0xF3	; 243
+ 23e:	88 60       	ori	r24, 0x08	; 8
+ 240:	0e 94 eb 00 	call	0x1d6	; 0x1d6 <I2C_Write>
+ 244:	80 e1       	ldi	r24, 0x10	; 16
+ 246:	8a 95       	dec	r24
+ 248:	f1 f7       	brne	.-4      	; 0x246 <togle_EN+0x20>
+	_delay_us(50);
+}
+ 24a:	cf 91       	pop	r28
+ 24c:	08 95       	ret
+
+0000024e <LCD_Write>:
+	
+	LCD_Write(0b00001100, 0);	//Set cursor options
+}
+
+void LCD_Write(unsigned char data, uint8_t RS_En)
+{
+ 24e:	1f 93       	push	r17
+ 250:	cf 93       	push	r28
+ 252:	df 93       	push	r29
+ 254:	c8 2f       	mov	r28, r24
+ 256:	16 2f       	mov	r17, r22
+	I2C_Start(LCD_Address);
+ 258:	8e e4       	ldi	r24, 0x4E	; 78
+ 25a:	0e 94 b8 00 	call	0x170	; 0x170 <I2C_Start>
+	
+	//*****Write Upper Four Bits*****
+	I2C_Write((data & 0xF0) | Backlight | RS_En);
+ 25e:	dc 2f       	mov	r29, r28
+ 260:	d0 7f       	andi	r29, 0xF0	; 240
+ 262:	8d 2f       	mov	r24, r29
+ 264:	81 2b       	or	r24, r17
+ 266:	88 60       	ori	r24, 0x08	; 8
+ 268:	0e 94 eb 00 	call	0x1d6	; 0x1d6 <I2C_Write>
+	togle_EN(data & 0xF0, RS_En);
+ 26c:	61 2f       	mov	r22, r17
+ 26e:	8d 2f       	mov	r24, r29
+ 270:	0e 94 13 01 	call	0x226	; 0x226 <togle_EN>
+	
+	//*****Write Lower Four Bits*****
+	I2C_Write(((data << 4) & 0xF0) | Backlight | RS_En);
+ 274:	80 e1       	ldi	r24, 0x10	; 16
+ 276:	c8 9f       	mul	r28, r24
+ 278:	e0 01       	movw	r28, r0
+ 27a:	11 24       	eor	r1, r1
+ 27c:	ce 01       	movw	r24, r28
+ 27e:	88 60       	ori	r24, 0x08	; 8
+ 280:	81 2b       	or	r24, r17
+ 282:	0e 94 eb 00 	call	0x1d6	; 0x1d6 <I2C_Write>
+	togle_EN((data << 4) & 0xF0, RS_En);
+ 286:	61 2f       	mov	r22, r17
+ 288:	8c 2f       	mov	r24, r28
+ 28a:	0e 94 13 01 	call	0x226	; 0x226 <togle_EN>
+	
+	I2C_Stop();
+ 28e:	0e 94 e2 00 	call	0x1c4	; 0x1c4 <I2C_Stop>
+}
+ 292:	df 91       	pop	r29
+ 294:	cf 91       	pop	r28
+ 296:	1f 91       	pop	r17
+ 298:	08 95       	ret
+
+0000029a <LCD_init>:
+#include "LCD_Disp.h"
+#include "I2C.h"
+
+
+void LCD_init()
+{
+ 29a:	cf 93       	push	r28
+	I2C_init();	//Initialize I2C protocol
+ 29c:	0e 94 b2 00 	call	0x164	; 0x164 <I2C_init>
+	
+	//*****Init Three Times*****
+	LCD_Write(0x03, 0);
+ 2a0:	60 e0       	ldi	r22, 0x00	; 0
+ 2a2:	83 e0       	ldi	r24, 0x03	; 3
+ 2a4:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 2a8:	82 ee       	ldi	r24, 0xE2	; 226
+ 2aa:	94 e0       	ldi	r25, 0x04	; 4
+ 2ac:	01 97       	sbiw	r24, 0x01	; 1
+ 2ae:	f1 f7       	brne	.-4      	; 0x2ac <LCD_init+0x12>
+	_delay_ms(5);
+	LCD_Write(0x03, 0);
+ 2b0:	60 e0       	ldi	r22, 0x00	; 0
+ 2b2:	83 e0       	ldi	r24, 0x03	; 3
+ 2b4:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+    can be achieved.
+*/
+void
+_delay_loop_1(uint8_t __count)
+{
+	__asm__ volatile (
+ 2b8:	c2 e3       	ldi	r28, 0x32	; 50
+ 2ba:	8c 2f       	mov	r24, r28
+ 2bc:	8a 95       	dec	r24
+ 2be:	f1 f7       	brne	.-4      	; 0x2bc <LCD_init+0x22>
+	_delay_us(150);
+	LCD_Write(0x03, 0);
+ 2c0:	60 e0       	ldi	r22, 0x00	; 0
+ 2c2:	83 e0       	ldi	r24, 0x03	; 3
+ 2c4:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+ 2c8:	ca 95       	dec	r28
+ 2ca:	f1 f7       	brne	.-4      	; 0x2c8 <LCD_init+0x2e>
+	_delay_us(150);
+	
+	LCD_Write(0x02, 0);
+ 2cc:	60 e0       	ldi	r22, 0x00	; 0
+ 2ce:	82 e0       	ldi	r24, 0x02	; 2
+ 2d0:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+	
+	LCD_Write(0b00101000, 0);
+ 2d4:	60 e0       	ldi	r22, 0x00	; 0
+ 2d6:	88 e2       	ldi	r24, 0x28	; 40
+ 2d8:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+
+	LCD_Write(0b00001000, 0);
+ 2dc:	60 e0       	ldi	r22, 0x00	; 0
+ 2de:	88 e0       	ldi	r24, 0x08	; 8
+ 2e0:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+	
+	LCD_Write(0b00000001, 0);
+ 2e4:	60 e0       	ldi	r22, 0x00	; 0
+ 2e6:	81 e0       	ldi	r24, 0x01	; 1
+ 2e8:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+	
+	LCD_Write(0b00001100, 0);	//Set cursor options
+ 2ec:	60 e0       	ldi	r22, 0x00	; 0
+ 2ee:	8c e0       	ldi	r24, 0x0C	; 12
+ 2f0:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+}
+ 2f4:	cf 91       	pop	r28
+ 2f6:	08 95       	ret
+
+000002f8 <LCD_Shift>:
+	LCD_Write(0x02, 0);
+	_delay_ms(2);
+}
+
+void LCD_Shift(uint8_t shift, uint8_t direction, uint8_t quantity)
+{
+ 2f8:	1f 93       	push	r17
+ 2fa:	cf 93       	push	r28
+ 2fc:	df 93       	push	r29
+ 2fe:	c4 2f       	mov	r28, r20
+	while(quantity)
+ 300:	44 23       	and	r20, r20
+ 302:	69 f0       	breq	.+26     	; 0x31e <LCD_Shift+0x26>
+	{
+		LCD_Write(0x10 | shift | direction, 0);
+ 304:	18 2f       	mov	r17, r24
+ 306:	10 61       	ori	r17, 0x10	; 16
+ 308:	16 2b       	or	r17, r22
+ 30a:	d0 e1       	ldi	r29, 0x10	; 16
+ 30c:	60 e0       	ldi	r22, 0x00	; 0
+ 30e:	81 2f       	mov	r24, r17
+ 310:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+ 314:	9d 2f       	mov	r25, r29
+ 316:	9a 95       	dec	r25
+ 318:	f1 f7       	brne	.-4      	; 0x316 <LCD_Shift+0x1e>
+		_delay_us(50);	//required 37usec pause
+		quantity--;
+ 31a:	c1 50       	subi	r28, 0x01	; 1
+	_delay_ms(2);
+}
+
+void LCD_Shift(uint8_t shift, uint8_t direction, uint8_t quantity)
+{
+	while(quantity)
+ 31c:	b9 f7       	brne	.-18     	; 0x30c <LCD_Shift+0x14>
+	{
+		LCD_Write(0x10 | shift | direction, 0);
+		_delay_us(50);	//required 37usec pause
+		quantity--;
+	}
+}
+ 31e:	df 91       	pop	r29
+ 320:	cf 91       	pop	r28
+ 322:	1f 91       	pop	r17
+ 324:	08 95       	ret
+
+00000326 <readRTC>:
+	
+}
+
+
+void readRTC(unsigned char *timeData)
+{
+ 326:	0f 93       	push	r16
+ 328:	1f 93       	push	r17
+ 32a:	cf 93       	push	r28
+ 32c:	df 93       	push	r29
+ 32e:	d8 2f       	mov	r29, r24
+ 330:	c9 2f       	mov	r28, r25
+	I2C_Start(0xD0);
+ 332:	80 ed       	ldi	r24, 0xD0	; 208
+ 334:	0e 94 b8 00 	call	0x170	; 0x170 <I2C_Start>
+	I2C_Write(0x00);
+ 338:	80 e0       	ldi	r24, 0x00	; 0
+ 33a:	0e 94 eb 00 	call	0x1d6	; 0x1d6 <I2C_Write>
+	I2C_Stop();
+ 33e:	0e 94 e2 00 	call	0x1c4	; 0x1c4 <I2C_Stop>
+	I2C_Start(0xD1);
+ 342:	81 ed       	ldi	r24, 0xD1	; 209
+ 344:	0e 94 b8 00 	call	0x170	; 0x170 <I2C_Start>
+ 348:	0d 2f       	mov	r16, r29
+ 34a:	1c 2f       	mov	r17, r28
+	for(int i = 0; i <= 6; i++)
+ 34c:	c0 e0       	ldi	r28, 0x00	; 0
+ 34e:	d0 e0       	ldi	r29, 0x00	; 0
+	{
+		timeData[i] = I2C_ReadAck();
+ 350:	0e 94 fd 00 	call	0x1fa	; 0x1fa <I2C_ReadAck>
+ 354:	f8 01       	movw	r30, r16
+ 356:	81 93       	st	Z+, r24
+ 358:	8f 01       	movw	r16, r30
+{
+	I2C_Start(0xD0);
+	I2C_Write(0x00);
+	I2C_Stop();
+	I2C_Start(0xD1);
+	for(int i = 0; i <= 6; i++)
+ 35a:	21 96       	adiw	r28, 0x01	; 1
+ 35c:	c7 30       	cpi	r28, 0x07	; 7
+ 35e:	d1 05       	cpc	r29, r1
+ 360:	b9 f7       	brne	.-18     	; 0x350 <readRTC+0x2a>
+	{
+		timeData[i] = I2C_ReadAck();
+	}
+	I2C_ReadNak();
+ 362:	0e 94 08 01 	call	0x210	; 0x210 <I2C_ReadNak>
+	I2C_Stop();	
+ 366:	0e 94 e2 00 	call	0x1c4	; 0x1c4 <I2C_Stop>
+}
+ 36a:	df 91       	pop	r29
+ 36c:	cf 91       	pop	r28
+ 36e:	1f 91       	pop	r17
+ 370:	0f 91       	pop	r16
+ 372:	08 95       	ret
+
+00000374 <main>:
+#include "LCD_Disp.h"
+#include "Conversions.h"
+#include "RTC.h"
+
+int main(void)
+{
+ 374:	cf 93       	push	r28
+ 376:	df 93       	push	r29
+ 378:	cd b7       	in	r28, 0x3d	; 61
+ 37a:	de b7       	in	r29, 0x3e	; 62
+ 37c:	29 97       	sbiw	r28, 0x09	; 9
+ 37e:	0f b6       	in	r0, 0x3f	; 63
+ 380:	f8 94       	cli
+ 382:	de bf       	out	0x3e, r29	; 62
+ 384:	0f be       	out	0x3f, r0	; 63
+ 386:	cd bf       	out	0x3d, r28	; 61
+	DDRB |= 0b00001001;
+ 388:	84 b1       	in	r24, 0x04	; 4
+ 38a:	89 60       	ori	r24, 0x09	; 9
+ 38c:	84 b9       	out	0x04, r24	; 4
+	PORTB |= 0b00001001;
+ 38e:	85 b1       	in	r24, 0x05	; 5
+ 390:	89 60       	ori	r24, 0x09	; 9
+ 392:	85 b9       	out	0x05, r24	; 5
+
+	unsigned char timeData[7];
+	unsigned char climateData[2];
+
+	I2C_init();
+ 394:	0e 94 b2 00 	call	0x164	; 0x164 <I2C_init>
+	LCD_init();
+ 398:	0e 94 4d 01 	call	0x29a	; 0x29a <LCD_init>
+	initDHT();
+ 39c:	0e 94 6e 00 	call	0xdc	; 0xdc <initDHT>
+	
+	
+	
+    while(1)
+    {
+		readRTC(timeData);
+ 3a0:	ce 01       	movw	r24, r28
+ 3a2:	01 96       	adiw	r24, 0x01	; 1
+ 3a4:	0e 94 93 01 	call	0x326	; 0x326 <readRTC>
+		LCD_Write(((timeData[2] & 0xF0) >> 4) + '0', RS);
+ 3a8:	8b 81       	ldd	r24, Y+3	; 0x03
+ 3aa:	82 95       	swap	r24
+ 3ac:	8f 70       	andi	r24, 0x0F	; 15
+ 3ae:	61 e0       	ldi	r22, 0x01	; 1
+ 3b0:	80 5d       	subi	r24, 0xD0	; 208
+ 3b2:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+		LCD_Write((timeData[2] & 0x0F) + '0', RS);
+ 3b6:	8b 81       	ldd	r24, Y+3	; 0x03
+ 3b8:	8f 70       	andi	r24, 0x0F	; 15
+ 3ba:	61 e0       	ldi	r22, 0x01	; 1
+ 3bc:	80 5d       	subi	r24, 0xD0	; 208
+ 3be:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+		LCD_Write('.', RS);
+ 3c2:	61 e0       	ldi	r22, 0x01	; 1
+ 3c4:	8e e2       	ldi	r24, 0x2E	; 46
+ 3c6:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+		LCD_Write(((timeData[1] & 0xF0) >> 4) + '0', RS);
+ 3ca:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3cc:	82 95       	swap	r24
+ 3ce:	8f 70       	andi	r24, 0x0F	; 15
+ 3d0:	61 e0       	ldi	r22, 0x01	; 1
+ 3d2:	80 5d       	subi	r24, 0xD0	; 208
+ 3d4:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+		LCD_Write((timeData[1] & 0x0F) + '0', RS);
+ 3d8:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3da:	8f 70       	andi	r24, 0x0F	; 15
+ 3dc:	61 e0       	ldi	r22, 0x01	; 1
+ 3de:	80 5d       	subi	r24, 0xD0	; 208
+ 3e0:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+		LCD_Write('.', RS);		
+ 3e4:	61 e0       	ldi	r22, 0x01	; 1
+ 3e6:	8e e2       	ldi	r24, 0x2E	; 46
+ 3e8:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+		LCD_Write(((timeData[0] & 0xF0) >> 4) + '0', RS);
+ 3ec:	89 81       	ldd	r24, Y+1	; 0x01
+ 3ee:	82 95       	swap	r24
+ 3f0:	8f 70       	andi	r24, 0x0F	; 15
+ 3f2:	61 e0       	ldi	r22, 0x01	; 1
+ 3f4:	80 5d       	subi	r24, 0xD0	; 208
+ 3f6:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+		LCD_Write((timeData[0] & 0x0F) + '0', RS);
+ 3fa:	89 81       	ldd	r24, Y+1	; 0x01
+ 3fc:	8f 70       	andi	r24, 0x0F	; 15
+ 3fe:	61 e0       	ldi	r22, 0x01	; 1
+ 400:	80 5d       	subi	r24, 0xD0	; 208
+ 402:	0e 94 27 01 	call	0x24e	; 0x24e <LCD_Write>
+		LCD_Shift(Cur_Shift, Left_Cur, 8);
+ 406:	48 e0       	ldi	r20, 0x08	; 8
+ 408:	60 e0       	ldi	r22, 0x00	; 0
+ 40a:	80 e0       	ldi	r24, 0x00	; 0
+ 40c:	0e 94 7c 01 	call	0x2f8	; 0x2f8 <LCD_Shift>
+		
+		pollDHT(climateData);
+ 410:	ce 01       	movw	r24, r28
+ 412:	08 96       	adiw	r24, 0x08	; 8
+ 414:	0e 94 7a 00 	call	0xf4	; 0xf4 <pollDHT>
+ 418:	c3 cf       	rjmp	.-122    	; 0x3a0 <main+0x2c>
+
+0000041a <_exit>:
+ 41a:	f8 94       	cli
+
+0000041c <__stop_program>:
+ 41c:	ff cf       	rjmp	.-2      	; 0x41c <__stop_program>

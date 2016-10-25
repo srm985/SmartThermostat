@@ -1,0 +1,217 @@
+==============================================================
+==============================================================
+4DGL Compiler 2.7.1.0 -- Copyright 2004-2012 4D Labs
+** C:\Users\Sean McQuay\Desktop\Smart Thermostat\SamrtThermo.4dg
+compiled Sun Jul 20 20:43:32 2014
+
+==============================================================
+==============================================================
+
+
+No Ref for file
+[LINKING]
+function 8, printTime, address 163
+stack usage 0 + 4
+function 'printTime' requires 1 argument
+function 'printTime' has no return value
+
+[LINKING]
+function 6, readRTC, address 678
+stack usage 0 + 4
+function 'readRTC' requires 1 argument
+function 'readRTC' has no return value
+
+[LINKING]
+function 4, checkTouch, address 891
+stack usage 0 + 4
+function 'checkTouch' requires 1 argument
+function 'checkTouch' has no return value
+
+[LINKING]
+function 3, initGraphics, address 1021
+stack usage 0 + 4
+function 'initGraphics' requires no arguments
+function 'initGraphics' has no return value
+
+[LINKING]
+function 2, initLCD, address 1068
+stack usage 0 + 4
+function 'initLCD' requires no arguments
+function 'initLCD' has no return value
+
+[LINKING]
+function 1, main, address 1187
+(main entry point)
+stack usage 22 + 4
+function 'main' requires no arguments
+function 'main' has no return value
+
+[RESERVED WORDS]
+#inherit
+#LISTCODE
+#MODE
+#STACK
+#OPTIMIZE_ON
+#OPTIMIZE_OFF
+byte
+word
+dword
+float
+private
+#IF
+#IFNOT
+#ELSE
+#ENDIF
+#CONST
+#constant
+#USE
+USING
+func
+endfunc
+var
+#STOP
+#DATA
+#ASM
+#END
+#platform
+EXISTS
+#ERROR
+#MESSAGE
+#NOTICE
+sizeof
+argcount
+if
+else
+endif
+while
+wend
+repeat
+until
+forever
+return
+break
+continue
+for
+next
+switch
+case
+default
+endswitch
+print
+goto
+gosub
+endsub
+mcall
+lookup8
+lookup16
+
+[MACRO]
+
+[CONSTANTS]
+__MAXMEM                          00003840      14400  (usage 1)
+__MAXPROG                         00003840      14400  (usage 1)
+I2C_SLOW                          00000000          0  (usage 7)
+i4Dbutton1                        00000001          1  (usage 24)
+I_TOUCH_DISABLE                   00000020         32  (usage 3)
+iLed1                             00000000          0  (usage 6)
+IMAGE_INDEX                       00000009          9  (usage 9)
+INPUT                             00000001          1  (usage 2)
+IO1_PIN                           00000001          1  (usage 20)
+LANDSCAPE                         00000000          0  (usage 3)
+ON                                00000001          1  (usage 6)
+OUTPUT                            00000000          0  (usage 2)
+PICASO                            00000001          1  (usage 3)
+SCREEN_MODE                       00000017         23  (usage 3)
+TOUCH_ENABLE                      00000000          0  (usage 3)
+TOUCH_GETX                        00000001          1  (usage 6)
+TOUCH_GETY                        00000002          2  (usage 6)
+TOUCH_MOVING                      00000003          3  (usage 3)
+TOUCH_PRESSED                     00000001          1  (usage 6)
+TOUCH_RELEASED                    00000002          2  (usage 6)
+TOUCH_STATUS                      00000000          0  (usage 3)
+
+[PmmC FUNCTIONS]
+file_LoadImageControl             FFFFFF04        -252  args=3 r=1  (usage 3)
+file_Mount                        FFFFFF03        -253  args=0 r=1  (usage 6)
+gfx_Cls                           FFFFFFCD         -51  args=0 r=0  (usage 6)
+gfx_Set                           FFFFFFCE         -50  args=2 r=0  (usage 3)
+gfx_Transparency                  FFFFFFA0         -96  args=1 r=1  (usage 3)
+gfx_TransparentColour             FFFFFFA1         -95  args=1 r=1  (usage 3)
+I2C_Ack                           FFFFFF57        -169  args=0 r=0  (usage 67)
+I2C_Close                         FFFFFF5D        -163  args=0 r=0  (usage 7)
+I2C_Nack                          FFFFFF56        -170  args=0 r=0  (usage 3)
+I2C_Open                          FFFFFF5E        -162  args=1 r=0  (usage 7)
+I2C_Read                          FFFFFF59        -167  args=0 r=1  (usage 24)
+I2C_Restart                       FFFFFF5A        -166  args=0 r=1  (usage 3)
+I2C_Start                         FFFFFF5C        -164  args=0 r=1  (usage 7)
+I2C_Stop                          FFFFFF5B        -165  args=0 r=1  (usage 7)
+I2C_Write                         FFFFFF58        -168  args=1 r=1  (usage 49)
+img_ClearAttributes               FFFFFF45        -187  args=3 r=1  (usage 3)
+img_SetWord                       FFFFFF49        -183  args=4 r=1  (usage 9)
+img_Show                          FFFFFF47        -185  args=2 r=1  (usage 12)
+img_Touched                       FFFFFF44        -188  args=2 r=1  (usage 3)
+pause                             FFFFFFFA          -6  args=1 r=0  (usage 12)
+pin_HI                            FFFFFFD6         -42  args=1 r=1  (usage 4)
+pin_LO                            FFFFFFD5         -43  args=1 r=1  (usage 2)
+pin_Read                          FFFFFFD4         -44  args=1 r=1  (usage 10)
+pin_Set                           FFFFFFD7         -41  args=2 r=1  (usage 4)
+putstr                            FFFFFFF7          -9  args=1 r=1  (usage 6)
+sys_T                             FFFFFF43        -189  args=0 r=1  (usage 4)
+touch_Get                         FFFFFF37        -201  args=1 r=1  (usage 15)
+touch_Set                         FFFFFF38        -200  args=1 r=0  (usage 3)
+txt_MoveCursor                    FFFFFFE9         -23  args=2 r=0  (usage 3)
+
+[USER FUNCTIONS]
+checkTouch                        0000037B  args=1 r=0  (usage 3)
+initGraphics                      000003FD  args=0 r=0  (usage 3)
+initLCD                           0000042C  args=0 r=0  (usage 3)
+printTime                         000000A3  args=1 r=0  (usage 3)
+readRTC                           000002A6  args=1 r=0  (usage 3)
+
+[GLOBAL VARIABLES]
+disk                                   1  word       (usage 6)
+hndl                                   2  word       (usage 30)
+
+[PRIVATE VARIABLES]
+
+[DATA]
+0007: 53 79 73 74 65 6D 20 54 69 6D 65 3A 0A 00 2E 00     System Time:....
+0017: 20 00 28 53 75 6E 64 61 79 29 20 00 28 4D 6F 6E      .(Sunday) .(Mon
+0027: 64 61 79 29 20 00 28 54 75 65 73 64 61 79 29 20     day) .(Tuesday) 
+0037: 00 28 57 65 64 6E 65 73 64 61 79 29 20 00 28 54     .(Wednesday) .(T
+0047: 68 75 72 73 64 61 79 29 20 00 28 46 72 69 64 61     hursday) .(Frida
+0057: 79 29 20 00 28 53 61 74 75 72 64 61 79 29 20 00     y) .(Saturday) .
+0067: 4D 6F 75 6E 74 69 6E 67 2E 2E 2E 0A 00 44 72 69     Mounting.....Dri
+0077: 76 65 20 6E 6F 74 20 6D 6F 75 6E 74 65 64 2E 2E     ve not mounted..
+0087: 2E 00 53 41 4D 52 54 54 7E 31 2E 64 61 74 00 53     ..SAMRTT~1.dat.S
+0097: 41 4D 52 54 54 7E 31 2E 67 63 69 00                 AMRTT~1.gci.
+
+[__MAXPROG]
+14400
+[__MAXMEM]
+14400
+
+[PROGRAM]
+main
+[CODESIZE]
+1320
+[MEMSIZE]
+2
+[ARGCOUNT]
+0
+[RETURNS]
+NO
+[STACKSIZE]
+0 (AUTO)
+[STACK_ESTIMATE]
+58   (nb:- worst case estimate)
+[MODE]
+0
+
+[PROJECT]
+C:\Users\Sean McQuay\Desktop\Smart Thermostat\SamrtThermo.4dg
+C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\uLCD-32PTU.fnc
+C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\PicasoFunctions.fnc
+C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\4DGL_16bitColours.fnc
+C:\Program Files (x86)\4D Labs\4D Workshop 4 IDE\include\VisualConst.inc
+C:\Users\Sean McQuay\Desktop\Smart Thermostat\SamrtThermo.4DWork\SamrtThermoConst.inc

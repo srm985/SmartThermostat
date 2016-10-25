@@ -1,0 +1,66 @@
+﻿Version     0.0
+Platform    uLCD-32PTU-L
+PlatRes     240x320
+Depends
+end
+Options
+    Visualizer
+    Speed                        9600
+    Checksum                     No
+    ResponseSize                 2
+    Multidrop                    No
+    Destination                  0
+    SndBuf                       0
+end
+Form
+    Name                         Form1
+    Bgtype                       Color
+    Color                        BLACK
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+Led
+    Name                         Led1
+    Active                       No
+    Caption                      Led1
+    Color                        BLACK
+    Font.Color                   clWhite
+    Font.Effects                 []
+    Font.Name                    Arial
+    Font.Size                    8
+    Font.Style                   []
+    Glyphs                       (None)
+    Height                       25
+    Layout                       Left
+    LedType                      Rounded
+    Left                         139
+    Palette.High                 clRed
+    Palette.Low                  0x000051
+    Spacing                      5
+    Top                          112
+    Visible                      Yes
+    Width                        50
+    OnChanged                    ''
+end
+4Dbutton
+    Name                         4Dbutton1
+    Height                       48
+    Left                         40
+    Matrix                       -1
+    Momentary                    Yes
+    Size                         48x48
+    Style                        Blue
+    Top                          104
+    Type                         Button02
+    Width                        48
+    OnChanged                    ''
+end

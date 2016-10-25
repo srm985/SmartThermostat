@@ -1,0 +1,9 @@
+skipped: 9     readDHT11 ----
+linked : 8     printTime 00A3
+skipped: 7     writeRTC ----
+linked : 6     readRTC 02A6
+skipped: 5     initRTC ----
+linked : 4     checkTouch 037B
+linked : 3     initGraphics 03FD
+linked : 2     initLCD 042C
+linked : 1     main 04A3
